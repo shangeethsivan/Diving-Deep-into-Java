@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
+<!-- above set at the top of the file will set     -->
+<!-- the browser's rendering engine into           -->
+<!-- "Quirks Mode". Replacing this declaration     -->
+<!-- with a "Standards Mode" doctype is supported, -->
+<!-- but may lead to some differences in layout.   -->
+
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>Hello App Engine</title>
+<script type="text/javascript">
+    function validateForm(boolean){
+    	
+    	var x = document.forms["myForm"]["trueorfalse"].value;
+    	
+    	if (x=="true" || x=="false" ) {
+    		if(boolean)
+    			posNeg(); 
+    		else
+    			return true ;
+    	}
+    	else{
+    		alert("Enter only true or false");
+    		return false;
+        }
+     console.log('WEGA');
+    }
+    function posNeg(){
+    
+    	var a=document.forms["myForm"]["number1"].value;
+    	var b=document.forms["myForm"]["number2"].value;
+    	var c=document.forms["myForm"]["trueorfalse"].value;
+    	
+    	var bool= "true" == c;
+    	
+    	if (bool)
+			alert(a < 0 && b < 0);
+		else
+			alert((a < 0 && b > 0) || (a > 0 && b < 0));
+    }
+    	
+    </script>
+</head>
+
+<body>
+	<h1>Pos Neg Web app</h1>
+	<form id="myForm" action="posnegweb" method="post"
+		onsubmit="return validateForm(false)">
+
+		<div style="padding-bottom: 10px">
+			<label>Number1</label><input id="number1" required type="number"
+				name="number1" /><br />
+		</div>
+		<div style="padding-bottom: 10px">
+			<label>Number2</label><input id="number2" required type="number"
+				name="number2" /><br />
+		</div>
+		<div style="padding-bottom: 10px">
+			<label>Choice(Enter true or false)</label><input required type="text"
+				id="trueorfalse" name="posorneg" /><br />
+		</div>
+		<div style="padding-bottom: 10px">
+			<button type="button" onclick="return validateForm(true)">Java
+				Script</button>
+			<button type="submit">Java</button>
+		</div>
+	</form>
+</body>
+</html>
