@@ -74,7 +74,6 @@ public class PhoneNumberHelper {
 				number.addNumber(label, mobileNumber);
 
 				out.print("Enter \"yes\" to continue adding a mobile number");
-				scanner.nextLine();
 				continueflag = scanner.nextLine();
 			}
 		} while (continueflag.equals("yes") || !validInput);
@@ -94,7 +93,7 @@ public class PhoneNumberHelper {
 		boolean validMobileNumber = true;
 
 		do {
-			PrintHelper.showDataToUser("Enter the Number");
+			//PrintHelper.showDataToUser("Enter the Number");
 
 			if (!validMobileNumber)
 				PrintHelper.showDataToUser("Enter a valid Mobile Number");

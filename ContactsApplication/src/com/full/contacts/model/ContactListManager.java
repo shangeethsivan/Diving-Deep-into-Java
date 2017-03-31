@@ -20,7 +20,10 @@ public class ContactListManager {
 	}
 
 	public static List<String> getContactList() {
-		return new ArrayList<>(contactsFirstNameList);
+		if (contactsFirstNameList == null)
+			return null;
+		else
+			return contactsFirstNameList;
 	}
 
 	public void addContactToList(String contactName) {
