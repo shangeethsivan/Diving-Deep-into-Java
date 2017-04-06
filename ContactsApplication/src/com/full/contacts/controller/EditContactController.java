@@ -8,7 +8,7 @@ package com.full.contacts.controller;
 import java.util.Scanner;
 
 import com.full.contacts.model.ContactDB;
-import com.full.contacts.model.ContactListManager;
+import com.full.contacts.model.ContactNameListManager;
 import com.full.contacts.pojo.Contact;
 import com.full.contacts.pojo.Name;
 import com.full.contacts.pojo.PhoneNumber;
@@ -37,8 +37,8 @@ public class EditContactController {
 				contact.setName(name);
 				ContactDB.nameChangedSortList();
 
-				ContactListManager.getContactList().remove(index);
-				ContactListManager listMananger = new ContactListManager();
+				ContactNameListManager.getContactList().remove(index);
+				ContactNameListManager listMananger = new ContactNameListManager();
 				listMananger.addContactToList(name.getFirstName());
 				break;
 			case 2:

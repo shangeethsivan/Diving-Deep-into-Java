@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import com.full.contacts.model.ContactDB;
-import com.full.contacts.model.ContactListManager;
+import com.full.contacts.model.ContactNameListManager;
 import com.full.contacts.pojo.Contact;
 import com.full.contacts.view.InputHelper;
 import com.full.contacts.view.PrintHelper;
@@ -19,7 +19,7 @@ public class ContactViewController {
 
 	public void showAllContacts(Scanner scanner) {
 
-		List<String> contactNames = ContactListManager.getContactList();
+		List<String> contactNames = ContactNameListManager.getContactList();
 
 		if (contactNames == null || contactNames.size() == 0)
 			System.out.println("No Contacts Available");
@@ -35,7 +35,7 @@ public class ContactViewController {
 			int userInput = -1;
 
 			do {
-				if (contactName.equals(ContactListManager.CONTACT_N_FOUND))
+				if (contactName.equals(ContactNameListManager.CONTACT_N_FOUND))
 					PrintHelper.showDataToUser(
 							"Please Enter Values only Shown in the above List\n Enter '0' to Goto Main Menu");
 
@@ -45,12 +45,12 @@ public class ContactViewController {
 					return;
 
 				} else {
-					contactName = ContactListManager.checkContactIndex(userInput);
+					contactName = ContactNameListManager.checkContactIndex(userInput);
 				}
 
-			} while (contactName.equals(ContactListManager.CONTACT_N_FOUND));
+			} while (contactName.equals(ContactNameListManager.CONTACT_N_FOUND));
 
-			if (!contactName.equals(ContactListManager.CONTACT_N_FOUND)) {
+			if (!contactName.equals(ContactNameListManager.CONTACT_N_FOUND)) {
 
 				ContactDB contactsDB = new ContactDB();
 				Contact contact = contactsDB.getContactInPostion(userInput - 1);

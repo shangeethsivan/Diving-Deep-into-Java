@@ -8,7 +8,7 @@ package com.full.contacts.controller;
 import java.util.Scanner;
 
 import com.full.contacts.model.ContactDB;
-import com.full.contacts.model.ContactListManager;
+import com.full.contacts.model.ContactNameListManager;
 import com.full.contacts.pojo.Address;
 import com.full.contacts.pojo.Contact;
 import com.full.contacts.pojo.Email;
@@ -60,7 +60,7 @@ public class NewContactController {
 
 			case 3:
 				// saving fistName in list
-				ContactListManager listManager = new ContactListManager();
+				ContactNameListManager listManager = new ContactNameListManager();
 				listManager.addContactToList(contact.getName().getFirstName());
 
 				// saving contact in DB

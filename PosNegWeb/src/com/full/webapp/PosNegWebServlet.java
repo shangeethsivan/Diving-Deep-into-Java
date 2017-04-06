@@ -20,27 +20,18 @@ public class PosNegWebServlet extends HttpServlet {
 
 	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
-//		try {
-			
 		Integer num1 = Integer.parseInt(req.getParameter("number1"));
 		Integer num2 = Integer.parseInt(req.getParameter("number2"));
 		Boolean bool = Boolean.parseBoolean(req.getParameter("posOrNeg"));
 
 		boolean result = PosNeg.posNeg(num1, num2, bool);
 
-		String output="";
+		String output = "";
 		if (result) {
-			output="True";
+			output = "True";
 		} else {
-			output="false";
+			output = "false";
 		}
 		resp.getWriter().println(output);
-//		req.setAttribute("output",output);
-		
-//		RequestDispatcher rq = req.getRequestDispatcher("result.jsp");
-//			rq.forward(req , resp);
-//		} catch (ServletException e) {
-//			e.printStackTrace();
-//		}
 	}
 }
